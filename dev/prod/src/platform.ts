@@ -212,7 +212,7 @@ export async function configurePlatform() {
   console.log('loading configuration', config)
   console.log('loaded branding', myBranding)
 
-  const title = myBranding.title ?? 'Platform'
+  const title = myBranding.title ?? '5GREEN SCHOOL'
 
   // apply branding
   window.document.title = title
@@ -332,7 +332,7 @@ export async function configurePlatform() {
 
   setMetadata(uiPlugin.metadata.PlatformTitle, title)
   setMetadata(workbench.metadata.PlatformTitle, title)
-  setDefaultLanguage(myBranding.defaultLanguage ?? 'en')
+  setDefaultLanguage(myBranding.defaultLanguage ?? 'ru')
   setMetadata(workbench.metadata.DefaultApplication, myBranding.defaultApplication ?? 'tracker')
   setMetadata(workbench.metadata.DefaultSpace, myBranding.defaultSpace ?? tracker.project.DefaultProject)
   setMetadata(workbench.metadata.DefaultSpecial, myBranding.defaultSpecial ?? 'issues')

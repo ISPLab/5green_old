@@ -244,7 +244,7 @@
     if (docTitle !== undefined && docTitle !== '') {
       document.title = ws == null ? docTitle : `${docTitle} - ${ws}`
     } else {
-      const title = getMetadata(workbench.metadata.PlatformTitle) ?? 'Platform'
+      const title = getMetadata(workbench.metadata.PlatformTitle) ?? '5GREEN SCHOOL'
       document.title = ws == null ? title : `${ws} - ${title}`
     }
   }

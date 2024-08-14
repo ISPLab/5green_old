@@ -71,7 +71,7 @@ import { taskId, createModel as taskModel } from '@hcengineering/model-task'
 import telegram, { telegramId, createModel as telegramModel } from '@hcengineering/model-telegram'
 import { templatesId, createModel as templatesModel } from '@hcengineering/model-templates'
 import { textEditorId, createModel as textEditorModel } from '@hcengineering/model-text-editor'
-import { timeId, createModel as timeModel } from '@hcengineering/model-time'
+import time, { timeId, createModel as timeModel } from '@hcengineering/model-time'
 import tracker, { trackerId, createModel as trackerModel } from '@hcengineering/model-tracker'
 import view, { viewId, createModel as viewModel } from '@hcengineering/model-view'
 import workbench, { workbenchId, createModel as workbenchModel } from '@hcengineering/model-workbench'
@@ -183,7 +183,7 @@ export default function buildModel (enabled: string[] = ['*'], disabled: string[
       {
         label: recruit.string.ConfigLabel,
         description: recruit.string.ConfigDescription,
-        enabled: true,
+        enabled: false,
         beta: false,
         icon: recruit.icon.RecruitApplication,
         classFilter: defaultFilter
@@ -312,14 +312,21 @@ export default function buildModel (enabled: string[] = ['*'], disabled: string[
         classFilter: defaultFilter
       }
     ],
-    [timeModel, timeId],
+    [timeModel, timeId, {
+      label: time.string.Label,
+      description: time.string.Description,
+      enabled: false,
+      beta: true,
+      icon: time.icon.Calendar,
+      classFilter: defaultFilter
+    }],
     [
       loveModel,
       loveId,
       {
         label: love.string.Office,
         description: love.string.LoveDescription,
-        enabled: true,
+        enabled: false,
         beta: true,
         icon: love.icon.Love,
         classFilter: defaultFilter

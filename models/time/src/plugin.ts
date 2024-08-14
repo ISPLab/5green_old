@@ -16,7 +16,7 @@
 import { type Client, type Doc, type Ref } from '@hcengineering/core'
 import { type Application } from '@hcengineering/model-workbench'
 import { type IntlString, mergeIds, type Resource } from '@hcengineering/platform'
-import type { AnyComponent } from '@hcengineering/ui'
+import { Label, type AnyComponent } from '@hcengineering/ui'
 import { type Action, type ActionCategory } from '@hcengineering/view'
 import { timeId } from '@hcengineering/time'
 import time from '@hcengineering/time-resources/src/plugin'
@@ -31,6 +31,9 @@ export default mergeIds(timeId, time, {
     CreateToDoGlobal: '' as Ref<Action<Doc, any>>
   },
   string: {
+    Label: '' as IntlString,
+    Description: '' as IntlString,
+    
     EditToDo: '' as IntlString,
     GotoTimePlaning: '' as IntlString,
     GotoTimeTeamPlaning: '' as IntlString,

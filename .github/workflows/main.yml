@@ -10,11 +10,11 @@ concurrency:
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [5green]
+    branches: [main]
     tags:
       - v*
   pull_request:
-    branches: [5green]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -243,7 +243,7 @@ jobs:
           path: ./tests/sanity/playwright-report/
       - name: Get Allure history
         uses: actions/checkout@v4
-        if: ${{ github.ref == 'refs/heads/5green' || startsWith(github.ref, 'refs/tags/v') }}
+        if: ${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v') }}
         continue-on-error: true
         with:
           ref: gh-pages
@@ -264,7 +264,7 @@ jobs:
           name: allure-report
           path: ./allure-report/
       - name: Deploy report to Github Pages
-        if: ${{ github.ref == 'refs/heads/5green' || startsWith(github.ref, 'refs/tags/v') }}
+        if: ${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v') }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -388,16 +388,16 @@ jobs:
         env:
           DOCKER_CLI_HINTS: false
       - name: Login to Docker Hub
-        if: ${{ github.ref == 'refs/heads/5green' || startsWith(github.ref, 'refs/tags/v') }}
+        if: ${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v') }}
         uses: docker/login-action@v3
         with:
           username: andreusimus
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
       - name: Docker push staging
-        # if: ${{ github.ref == 'refs/heads/5green' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: node common/scripts/install-run-rush.js docker:staging
       - name: Docker push tag
-        # if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
         run: |
           echo Pushing release of tag ${{ github.ref }}
           node common/scripts/install-run-rush.js docker:push

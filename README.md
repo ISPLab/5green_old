@@ -1,3 +1,23 @@
+docker tag andreusimus/front  andreusimus/front
+
+
+
+
+docker images -q | xargs -I {} docker tag --registry andreusimus {}
+
+
+docker images -q | xargs -I {} docker tag {} andreusimus/{}
+
+
+docker images | awk '{print $1}' | xargs -I {} docker tag {}:latest andreusimus/{}:latest
+docker images | awk '{print $1}' | xargs -I {} docker push andreusimus/{}:latest
+
+docker images -q | xargs -I {} docker tag {} andreusimus/{}:latest
+docker images -q | xargs -I {} docker push andreusimus/{}:latest
+
+docker images -q | xargs -I {} docker tag {} {}:new
+
+
 # Huly Platform
 
 [![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/huly_io?style=for-the-badge)](https://x.com/huly_io)
@@ -244,7 +264,7 @@ node ./common/scripts/bump.js -p projectName
 
 This project is tested with BrowserStack.
 
-<sub><sup>&copy; 2024 <a href="https://hardcoreeng.com">Hardcore Engineering Inc</a>.</sup></sub>
+<sub><sup>&copy; 2024 <a href="https://andreusimus.com">Hardcore Engineering Inc</a>.</sup></sub>
 
 =[ FROM CACHE: 284 operations ]===============================================
 

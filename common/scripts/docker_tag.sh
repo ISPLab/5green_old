@@ -13,8 +13,11 @@ rev_version=$(git rev-parse HEAD)
 #   docker tag "$1:$rev_version" "$1:$version"
 #   docker push "$1:$version"
 # else
-  echo "Tagging release $1 with version ${version}"  
-  #docker tag "$1:$rev_version" "$1:$version"
-  docker tag "$1:latest"
+#   echo "Tagging release $1 with version ${version}"  
+#docker tag "$1:$rev_version" "$1:$version"
+#  docker tag "$1:$rev_version" "$1:latest"
+#  docker push "$1:$version"
+  echo "Tagging release $1:$rev_version with version ${version}"  
+  docker tag "$1:$rev_version" "$1:latest"
   docker push "$1:latest"
 #fi

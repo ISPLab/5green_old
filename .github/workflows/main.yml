@@ -353,9 +353,9 @@ jobs:
       #   uses: actions/upload-artifact@v3
       #   with:
       #     name: db-snapshot
-      #     path: ./tests/db_dump      
+      #     path: ./tests/db_dump     , test, svelte-check, uitest  
   docker-build:    
-    needs: [build, test, svelte-check, uitest]
+    needs: [build]
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:

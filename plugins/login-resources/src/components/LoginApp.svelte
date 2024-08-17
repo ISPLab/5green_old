@@ -42,14 +42,14 @@
   import LoginIcon from './icons/LoginIcon.svelte'
 
   import loginBack from '../../img/login_back.png'
-  import loginBack2x from '../../img/login_back_2x.png'
+  import loginBack2x from '../../img/login_back.png'//'../../img/login_back_2x.png'
 
-  import loginBackAvif from '../../img/login_back.avif'
-  import loginBack2xAvif from '../../img/login_back_2x.avif'
+  import loginBackAvif from '../../img/login_back.png'//'../../img/login_back.avif'
+  import loginBack2xAvif from '../../img/login_back.png'//'../../img/login_back_2x.avif'
 
   import { Pages, getAccount, pages } from '..'
-  import loginBackWebp from '../../img/login_back.webp'
-  import loginBack2xWebp from '../../img/login_back_2x.webp'
+  import loginBackWebp from '../../img/login_back.png'//'../../img/login_back.webp'
+  import loginBack2xWebp from '../../img/login_back.png'//'../../img/login_back_2x.webp'
   import login from '../plugin'
 
   export let page: Pages = 'signup'
@@ -102,7 +102,7 @@
   onMount(chooseToken)
 </script>
 
-<div class="theme-dark w-full h-full backd" class:paneld={$deviceInfo.docWidth <= 768} class:white={!$themeStore.dark}>
+<div  class="theme-dark w-full h-full backd" class:paneld={$deviceInfo.docWidth <= 768} class:white={!$themeStore.dark}>
   <div class="bg-image clear-mins" class:back={$deviceInfo.docWidth > 768} class:p-4={$deviceInfo.docWidth > 768}>
     <picture>
       <source srcset={`${loginBackAvif}, ${loginBack2xAvif} 2x`} type="image/avif" />
@@ -244,7 +244,7 @@
     position: absolute;
     content: '';
     inset: 0;
-    background: radial-gradient(161.92% 96.11% at 11.33% 3.89%, #313d9a 0%, #202669 100%);
+    background:radial-gradient(161.92% 96.11% at 11.33% 3.89%, #8EF26C 0%, #397325 100%);
     z-index: -1;
   }
   .panel::after {

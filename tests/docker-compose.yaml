@@ -32,7 +32,7 @@ services:
       retries: 10
       test: curl -s http://localhost:9200/_cluster/health | grep -vq '"status":"red"'
   account:
-    image: hardcoreeng/account
+    image: andreusimus/account
     pull_policy: never
     links:
       - mongodb
@@ -51,7 +51,7 @@ services:
       - MODEL_ENABLED=*
       - BRANDING_PATH=/var/cfg/branding.json
   front:
-    image: hardcoreeng/front
+    image: andreusimus/front
     pull_policy: never
     links:
       - account
@@ -80,7 +80,7 @@ services:
       - STORAGE_CONFIG=${STORAGE_CONFIG}
       - BRANDING_URL=http://localhost:8083/branding-test.json
   transactor:
-    image: hardcoreeng/transactor
+    image: andreusimus/transactor
     pull_policy: never
     links:
       - mongodb
@@ -109,7 +109,7 @@ services:
       - ELASTIC_INDEX_NAME=local_storage_index
       - BRANDING_PATH=/var/cfg/branding.json
   collaborator:
-    image: hardcoreeng/collaborator
+    image: andreusimus/collaborator
     links:
       - mongodb
       - minio
@@ -126,7 +126,7 @@ services:
       - STORAGE_CONFIG=${STORAGE_CONFIG}
     restart: unless-stopped
   rekoni:
-    image: hardcoreeng/rekoni-service
+    image: andreusimus/rekoni-service
     restart: on-failure
     ports:
       - 4005:4004

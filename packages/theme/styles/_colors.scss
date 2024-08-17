@@ -123,21 +123,23 @@
   --theme-refinput-divider: rgba(255, 255, 255, .07);
   --theme-refinput-border: rgba(255, 255, 255, .1);
 
+
   // Be aware to update defineAlpha() function in colors.ts
-  --theme-bg-color: #1A1A28;
+ // --theme-bg-color: #254720;
+  --theme-bg-color: #4E5F4F;
   --theme-bg-accent-color: rgba(0, 0, 0, .08);
   --theme-bg-dark-color: rgba(0, 0, 0, .2);
   --theme-back-color: #0f0f18;
   --theme-overlay-color: rgba(0, 0, 0, .3);
-  --theme-statusbar-color: #1A1928;
-  --theme-navpanel-color: #14141F;
+  --theme-statusbar-color: #172B10;
+  --theme-navpanel-color: #172B10;
   --theme-navpanel-hovered: rgba(255, 255, 255, .04);
   --theme-navpanel-selected: rgba(255, 255, 255, .08);
   --theme-navpanel-divider: rgba(255, 255, 255, .1);
   --theme-navpanel-border: rgba(255, 255, 255, .1);
   --theme-navpanel-icons-color: #7F7F7F;
   --theme-navpanel-icons-divider: rgba(255, 255, 255, .11);
-  --theme-comp-header-color: #1F1F2C;
+  --theme-comp-header-color: #172B10;
   --theme-divider-color: rgba(255, 255, 255, .06);
   --theme-bg-divider-color: #282834;
   --theme-mention-bg-color: rgba(55, 122, 230, 0.1);
@@ -272,7 +274,7 @@
   --card-overlay-color: rgba(28, 29, 31, .5);
   --avatar-bg-color: #4f5358;
   --avatar-border-color: rgba(255, 255, 255, .1);
-  --tooltip-bg-color: #1f2023f0;
+  --tooltip-bg-color: #172B10;
 
   --button-bg-color: #303236;
   --button-bg-hover: #37383b;

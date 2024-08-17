@@ -701,7 +701,7 @@
           size={appsMini ? 'small' : 'large'}
           on:click={() => showPopup(AppSwitcher, { apps }, popupPosition)}
         />
-        <a href={supportLink} target="_blank" rel="noopener noreferrer">
+        <!-- <a href={supportLink} target="_blank" rel="noopener noreferrer">
           <AppItem
             icon={support.icon.Support}
             label={support.string.ContactUs}
@@ -710,7 +710,7 @@
             selected={supportStatus?.visible}
             loading={supportWidgetLoading}
           />
-        </a>
+        </a> -->
         <!-- {#await supportClient then client}
           {#if client}
             <AppItem

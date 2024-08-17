@@ -24,7 +24,7 @@
 </script>
 
 {#if $location.path[0] === guestId}
-  {#await connect(getMetadata(workbench.metadata.PlatformTitle) ?? 'Platform')}
+  {#await connect(getMetadata(workbench.metadata.PlatformTitle) ?? '5GREEN SCHOOL')}
     <Loading />
   {:then client}
     {#if $versionError}

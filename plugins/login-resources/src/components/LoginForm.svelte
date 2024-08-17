@@ -102,7 +102,8 @@
   {fields}
   {object}
   {action}
-  bottomActions={[recoveryAction]}
+
   ignoreInitialValidation
   withProviders
 />
+  <!-- bottomActions={[recoveryAction]} -->

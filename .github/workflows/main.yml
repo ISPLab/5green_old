@@ -237,7 +237,7 @@ jobs:
           docker logs $(docker ps | grep front | cut -f 1 -d ' ') > logs/front.log
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: playwright-results
           path: ./tests/sanity/playwright-report/
@@ -259,7 +259,7 @@ jobs:
           allure_history: allure-history
       - name: Upload allure test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: allure-report
           path: ./allure-report/
@@ -272,7 +272,7 @@ jobs:
           PUBLISH_DIR: allure-history
       - name: Upload Logs
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: docker-logs
           path: ./tests/sanity/logs
@@ -338,13 +338,13 @@ jobs:
           docker logs $(docker ps | grep front | cut -f 1 -d ' ') > logs/uweb-front.log
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: playwright-results-uweb
           path: ./tests/sanity/playwright-report/
       - name: Upload Logs
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: docker-logs-uweb
           path: ./tests/sanity/logs
